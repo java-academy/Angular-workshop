@@ -1,8 +1,20 @@
-<h2>{{ ship.name | uppercase }} Details</h2>
-<div><span>id: </span>{{ship.id}}</div>
-<div><span>name: </span>{{ship.name}}</div>
-<div>
-    <label>Modify name:
-      <input [(ngModel)]="ship.name" placeholder="name"/>
-    </label>
+<h2>My Ships</h2>
+<ul class="ships">
+    <li *ngFor="let ship of ships"
+    [class.selected]="ship === selectedShip"
+    (click)="onSelect(ship)">
+    <span class="badge">{{ship.id}}</span> {{ship.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedShip">
+
+    <h2>{{ selectedShip.name | uppercase }} Details</h2>
+    <div><span>id: </span>{{selectedShip.id}}</div>
+    <div>
+        <label>name:
+            <input [(ngModel)]="selectedShip.name" placeholder="name"/>
+        </label>
+    </div>
+
 </div>
