@@ -1,0 +1,8 @@
+<h2>{{ ship.name | uppercase }} Details</h2>
+<div><span>id: </span>{{ship.id}}</div>
+<div><span>name: </span>{{ship.name}}</div>
+<div>
+    <label>Modify name:
+      <input [(ngModel)]="ship.name" placeholder="name"/>
+    </label>
+</div>
