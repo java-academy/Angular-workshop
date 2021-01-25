@@ -1,4 +1,5 @@
 <h2>My Ships</h2>
+
 <ul class="ships">
     <li *ngFor="let ship of ships"
     [class.selected]="ship === selectedShip"
@@ -7,14 +8,4 @@
   </li>
 </ul>
 
-<div *ngIf="selectedShip">
-
-    <h2>{{ selectedShip.name | uppercase }} Details</h2>
-    <div><span>id: </span>{{selectedShip.id}}</div>
-    <div>
-        <label>name:
-            <input [(ngModel)]="selectedShip.name" placeholder="name"/>
-        </label>
-    </div>
-
-</div>
+<app-ship-detail [ship]="selectedShip"></app-ship-detail>
