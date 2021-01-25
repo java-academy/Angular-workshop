@@ -1,10 +1,22 @@
 <h2>My Ships</h2>
 
+<div>
+  <label>Ship name:
+    <input #shipName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(shipName.value); shipName.value=''">
+    Add
+  </button>
+</div>
+
 <ul class="ships">
     <li *ngFor="let ship of ships"
     [class.selected]="ship === selectedShip"
     (click)="onSelect(ship)">
     <span class="badge">{{ship.id}}</span> {{ship.name}}
+    <button class="delete" title="delete ship"
+    (click)="delete(ship)">x</button>
   </li>
 </ul>
 
