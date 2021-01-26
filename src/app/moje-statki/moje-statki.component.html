@@ -1,0 +1,15 @@
+
+
+<h2>Szczegóły: {{statek.name | uppercase}}</h2>
+<div>
+  <p>Id: {{statek.id}}</p>
+</div>
+<div>
+  <p>Id: {{statek.name}}</p>
+</div>
+
+<div>
+  <label>Zmien nazwe
+    <input [(ngModel)]="statek.name" placeholder="nazwa">
+  </label>
+</div>
